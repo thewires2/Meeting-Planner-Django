@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<h1> WELCOME TO THE JUNGLE !!!!</h1>
+<p>Please respect the Jungle </p>
+<h2>
+    MEETINGS
+</h2>
+<ul>
+    {% for meeting in meetings %}
+    <li>
+        <a href="{% url 'detail' meeting.id %}">
+        {{ meeting.title }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'rooms'  %}">Room Details</a>
+{% endblock %}
